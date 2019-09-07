@@ -1,15 +1,4 @@
-const arrayToSort = [20, 40, 10, 60, 90, 70, 50, 30, 100, 80];
-
-const quicksort = (arrayToSort, low, high) => {
-    if (low < high) {
-        pivotPoint = pivot(arrayToSort, low, high);
-
-        quicksort(arrayToSort, low, pivotPoint - 1);
-        quicksort(arrayToSort, pivotPoint + 1, high);
-    }
-
-    return arrayToSort;
-};
+const arrayToSort = [20, 40, 10, -10, 60, 90, 70, 50, 30, 100, 80];
 
 const pivot = (arrayToSort, low, high) => {
     const swap = (a, b) => {
@@ -35,7 +24,20 @@ const pivot = (arrayToSort, low, high) => {
     return i + 1;
 };
 
-const sortedArray = quicksort(arrayToSort, 0, arrayToSort.length - 1);
+const quickSort = (arrayToSort, low, high) => {
+    if (low < high) {
+        let pivotPoint = pivot(arrayToSort, low, high);
+
+        quickSort(arrayToSort, low, pivotPoint - 1);
+        quickSort(arrayToSort, pivotPoint + 1, high);
+    }
+
+    return arrayToSort;
+};
+
+const sortedArray = quickSort(arrayToSort, 0, arrayToSort.length - 1);
 
 console.log("Sorted array: ");
 console.log(sortedArray);
+
+module.exports = quickSort;

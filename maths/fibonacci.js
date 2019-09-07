@@ -1,6 +1,8 @@
-const fibonacciIndex = 11;
+const fibonacciIndex = -5;
 
 const fibonacci = index => {
+    if (index < 0) return "Negative numbers not supported.";
+
     let fibonacciSeries = Array(index);
 
     fibonacciSeries[0] = 0;
@@ -15,10 +17,23 @@ const fibonacci = index => {
         i += 1;
     }
 
+    // 0 <--
+    // 0 + 1 <--
+    // 0 + 1 + 1 <--
+    // 0 + 1 + 1 + 2 <--
+    // 0 + 1 + 1 + 2 + 3 <--
+    // 0 + 1 + 1 + 2 + 3 + 5 <--
+    // 0 + 1 + 1 + 2 + 3 + 5 + 8 <--
+    // 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 <--
+    // 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 <--
+    // 0 + 1 + 1 + 2 + 3 + 5 + 8 + 13 + 21 + 34 <--
+
     return fibonacciSeries[index];
 };
 
 const fibonacciFormula = index => {
+    if (index < 0) return "Negative numbers not supported.";
+
     const sqrtFive = Math.sqrt(5);
 
     const Phi = (1 + sqrtFive) / 2;
@@ -30,13 +45,18 @@ const fibonacciFormula = index => {
     return Math.round(fibonacciResult);
 };
 
-const fibonacciValue = fibonacci(fibonacciIndex);
+// const fibonacciValue = fibonacci(fibonacciIndex);
 const fibonacciValuefromFormula = fibonacciFormula(fibonacciIndex);
 
-console.log(
-    `Fibonacci value at ${fibonacciIndex} using series is: ${fibonacciValue}`
-);
+// console.log(
+//     `Fibonacci value at ${fibonacciIndex} using series is: ${fibonacciValue}`
+// );
 
 console.log(
     `Fibonacci value at ${fibonacciIndex} using formula is: ${fibonacciValuefromFormula}`
 );
+
+module.exports = {
+    fibonacci,
+    fibonacciFormula
+};

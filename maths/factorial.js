@@ -1,4 +1,4 @@
-const factorialIndex = 5;
+const factorialIndex = 10;
 
 const factorial = index => {
     if (index === 0) return 1;
@@ -18,3 +18,5 @@ const factorial = index => {
 
 const factorialResult = factorial(factorialIndex);
 console.log(factorialResult);
+
+module.exports = factorial;

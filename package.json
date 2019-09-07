@@ -1,0 +1,22 @@
+{
+    "name": "JS-algorithms",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/eclairsp/JS-algorithms.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/eclairsp/JS-algorithms/issues"
+    },
+    "homepage": "https://github.com/eclairsp/JS-algorithms#readme",
+    "devDependencies": {
+        "jest": "^24.9.0"
+    }
+}
